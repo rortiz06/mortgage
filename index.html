@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortagae loan</title>
+    <title>Mortgage loan</title>
     <script src="accounting.js"></script>
 
     <style>
@@ -73,40 +73,40 @@
             <td>
 
 
-                <h1>Mortage loan Calculator</h1>
+                <h1>Mortgage loan Calculator</h1>
 
                 <form name="theform">
                     <table>
                         <tr>
-                            <td><strong><span style="float: left;">Loan Amount</span></strong></td>
+                            <td><strong><span style="float: left">Loan Amount</span></strong></td>
                             <td><input name="loanAmountFmInput" size="10"></td>
                             <td rowspan="7"><img src="pic.jpg" alt="picutre of money"></td>
                         </tr>
                         <tr>
-                            <td><strong><span style="float: left;">Rate</span></strong></td>
+                            <td><strong><span style="float: left">Rate</span></strong></td>
                             <td><input name="rateFmInput" size="10"></td>
 
                         </tr>
                         <tr>
-                            <td><strong><span style="float: left;">Year</span></strong></td>
+                            <td><strong><span style="float: left">Year</span></strong></td>
                             <td><input name="yearsFmInput" size="10"></td>
 
                         </tr>
 
                         <tr>
-                            <td><strong><span style="float: left;">Number of Payment</span></strong></td>
+                            <td><strong><span style="float: left">Number of Payments</span></strong></td>
                             <td style="background: white; color: black;" id="numOfPaymentFmOutPut"></td>
 
                         </tr>
 
                         <tr>
-                            <td><strong><span style="float: left;">Mouthly Payment</span></strong></td>
+                            <td><strong><span style="float: left">Mouthly Payment</span></strong></td>
                             <td style="background: white; color: black;" id="paymentFmOutPut"></td>
 
                         </tr>
 
                         <tr>
-                            <td><strong><span style="float: left;">Total Interest</span></strong></td>
+                            <td><strong><span style="float: left">Total Interest</span></strong></td>
                             <td style="background: white; color: black;" id="totalInterestFmOutPut"></td>
 
                         </tr>
@@ -169,15 +169,14 @@
 
                         balance = parseFloat(loan);
 
-                        report += "<tr class='trdisplay'><td class='tddisplay'>" + "PMT Num" + "</td><td class='tddisplay'>" + " Interest " + "</td><td class='tddisplay'>" + " Principal " + "</td><td class='tddisplay'>" + " Payment " + "</td><td class='tddisplay'>" + " Balance " + "</td></tr class='tddisplay'>";
-
+                        report += "<tr class='trdisplay'><th class='tddisplay'>" + "PMT Num" + "</th><th class='tddisplay'>" + " Interest " + "</th><th class='tddisplay'>" + " Principal " + "</th><th class='tddisplay'>" + " Payment " + "</th><th class='tddisplay'>" + " Balance " + "</th></tr>";
 
 
                         for (i = 1; i < months; i++) {
                             interest = parseFloat(balance * rate);
                             principal = parseFloat(payment - interest);
                             balance = parseFloat(balance - principal);
-                            report += "<tr class='trdisplay'><td class='tddisplay'>" + i + "</td><td class='tddisplay'>" + accounting.formatMoney(interest) + "</td><td class='tddisplay'>" + accounting.formatMoney(principal) + "</td><td class='tddisplay'>" + accounting.formatMoney(payment) + "</td><td class='tddisplay'>" + accounting.formatMoney(balance) + "</td></tr>";
+                            report += "<tr class='trdisplay'><td class='tddisplay'>" + "<span class='alignright'>" + i + "</span></td><td class ='tddisplay'>" + "<span class='alignright'>" + accounting.formatMoney(interest) + "</span></td><td class ='tddisplay'>" + "<span class ='alignright'>"+ accounting.formatMoney(principal) + "</span></td><td class='tddisplay'>" + "<span class=alignright'>" +  accounting.formatMoney(payment) +  "<span></td><td class='tddisplay'>" + "<span class='alignright'>" + accounting.formatMoney(balance) + "</span></td></tr>";
 
 
 
@@ -187,8 +186,7 @@
                         interest = parseFloat(balance * rate);
                         principal = parseFloat(payment - interest);
                         balance = parseFloat(balance - principal);
-                        report += "<tr class='trdisplay'><td class='tddisplay'>" + i + "</td><td class='tddisplay'>" + accounting.formatMoney(interest) + "</td><td class='tddisplay'>" + accounting.formatMoney(principal) + "</td><td class='tddisplay'>" + accounting.formatMoney(payment) + "</td><td class='tddisplay'>" + accounting.formatMoney(0) + "</td></tr>";
-
+                        report += "<tr class='trdisplay'><td class='tddisplay'>" + "<span class='alignright'>" + i + "</span></td><td class ='tddisplay'>" + "<span class='alignright'>" + accounting.formatMoney(interest) + "</span></td><td class ='tddisplay'>" + "<span class ='alignright'>"+ accounting.formatMoney(principal) + "</span></td><td class='tddisplay'>" + "<span class=alignright'>" +  accounting.formatMoney(payment) +  "<span></td><td class='tddisplay'>" + "<span class='alignright'>" + accounting.formatMoney(0) + "</span></td></tr>";
 
 
                         report += "</table>"
